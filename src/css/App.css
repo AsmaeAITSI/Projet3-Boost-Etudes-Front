@@ -1,0 +1,70 @@
+/* App.css */
+
+/* Footer.css */
+
+/* Style pour le conteneur du footer */
+.footer-container {
+  position: fixed;
+
+  bottom: 0;
+  width: 100%;
+  background-color: #d9a59a;
+  padding: 20px;
+  color: black;
+  text-align: center;
+  
+}
+
+/* Style pour la barre de navigation */
+.navbar-container {
+  margin-bottom: 20px;
+  
+}
+
+.navbar-container a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Style pour les liens au survol */
+.navbar-container a:hover {
+  text-decoration: underline;
+}
+
+
+/* Style pour le texte du footer */
+.footer-text {
+  font-size: 14px;
+}
+
+/* Style pour les liens dans le footer */
+.footer-link {
+  color: rgb(15, 15, 14);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Style pour les liens au survol */
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.login-page {
+  margin-top: 30px; /* Ajustez la valeur en pixels en fonction de l'espace souhaité */
+}
+
+.content {
+  min-height: calc(100vh - 70px);
+  padding-bottom: 70px;
+}
+
+.availability-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.input-field {
+  margin-bottom: 8px;
+}
+
