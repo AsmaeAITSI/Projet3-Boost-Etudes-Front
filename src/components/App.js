@@ -38,7 +38,7 @@ function App() {
           )}
           <Route path="/signup" element={<Signup />} />
           <Route path="/mes-disponibilites" element={<Availability user={user} />} />
-          <Route path="/reservation-course" element={<ReservationCourse/>} />
+          <Route path="/reservation-course" element={<ReservationCourse user={user}/>} />
           
         </Routes>
       </Container>

@@ -21,7 +21,7 @@ const Availability = ({ user }) => {
 
 
   useEffect(() => {
-    // Appeler le back-end pour récupérer les disponibilités de l'utilisateur
+
     if (user.id) {
       axios.get(`http://localhost:8082/api/auth/${user.id}/availabilities`)
         .then(response => setAvailabilities(response.data))
@@ -34,7 +34,7 @@ const Availability = ({ user }) => {
     const newStartTime = e.target.value;
     setStartTime(newStartTime);
 
-    // Calculer la date de fin automatiquement comme 2 heures après l'heure de début
+    
     const [startHour, startMinute] = newStartTime.split(":");
     const endHour = (parseInt(startHour) + 2).toString().padStart(2, "0");
     const endMinute = startMinute;
@@ -46,12 +46,12 @@ const Availability = ({ user }) => {
       // Obtenez la date et l'heure actuelles
       const currentTime = currentDate.toTimeString().split(' ')[0];
   
-      // Formattez la date et l'heure d'entrée dans le même format que celles actuelles
+      
       const formattedInputDate = `${day}T${startTime}`;
       
-      // Vérifiez si la date d'entrée est postérieure ou égale à la date actuelle
+      
       if (formattedInputDate >= `${currentDay}T${currentTime}`) {
-        // Vérifiez si l'heure de fin est postérieure à l'heure de début
+       
         if (startTime < endTime) {
           const newAvailability = {
             day: day,

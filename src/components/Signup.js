@@ -25,15 +25,6 @@ export default function Signup() {
       <Form.Group>
         <Form.Check
           type="radio"
-          label="Je suis étudiant"
-          name="userType"
-          checked={selectedOption === "student"}
-          onChange={() => handleOptionChange("student")}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Check
-          type="radio"
           label="Je suis enseignant"
           name="userType"
           checked={selectedOption === "teacher"}

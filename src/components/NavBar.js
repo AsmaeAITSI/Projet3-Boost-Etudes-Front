@@ -22,10 +22,7 @@ function Navbar({setIsAuthenticated, setUser, isAuthenticated}) {
       };
 
       const handleLogout = () => {
-        // ... (logique de déconnexion)
-    
         setUser(null);
-        // setShowDropdown(false); // Après la déconnexion, on masque le dropdown
         setIsAuthenticated(false);
         handleMenuClose();
       };
