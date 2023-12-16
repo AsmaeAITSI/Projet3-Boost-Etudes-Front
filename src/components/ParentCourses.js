@@ -8,7 +8,7 @@ const ParentCourses = ({ user }) => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`http://localhost:8082/api/auth/courses/parent/${user.id}`);
+        const response = await axios.get(`http://10.200.0.12:8082/api/auth/courses/parent/${user.id}`);
         setCourses(response.data);
       } catch (error) {
         console.error('Erreur lors de la récupération des cours :', error);

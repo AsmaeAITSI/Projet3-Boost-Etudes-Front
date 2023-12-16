@@ -23,7 +23,7 @@ const Availability = ({ user }) => {
   useEffect(() => {
 
     if (user.id) {
-      axios.get(`http://localhost:8082/api/auth/${user.id}/availabilities`)
+      axios.get(`http://10.200.0.12:8082/api/auth/${user.id}/availabilities`)
         .then(response => setAvailabilities(response.data))
         .catch(error => console.error("Erreur lors de la récupération des disponibilités :", error));
     }
@@ -60,7 +60,7 @@ const Availability = ({ user }) => {
           };
   
           await axios.post(
-            `http://localhost:8082/api/auth/${user.id}/availability`,
+            `http://10.200.0.12:8082/api/auth/${user.id}/availability`,
             newAvailability
           );
           setAvailabilities([...availabilities, newAvailability]);

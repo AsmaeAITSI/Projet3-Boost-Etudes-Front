@@ -31,7 +31,7 @@ export default function Login(props) {
     }
 
     try {
-      const response = await fetch("http://localhost:8082/api/auth/login", {
+      const response = await fetch("http://10.200.0.12:8082/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

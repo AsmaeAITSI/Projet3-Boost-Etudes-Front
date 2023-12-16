@@ -29,7 +29,7 @@ const ReservationCourse = ({ user }) => {
   useEffect(() => {
     // Appeler le backend pour récupérer les disponibilités des professeurs
     axios
-      .get("http://localhost:8082/api/auth/availabilities/all")
+      .get("http://10.200.0.12:8082/api/auth/availabilities/all")
       .then((response) => {
         setAvailabilities(response.data);
         console.log("Availabilities:", response.data);
@@ -43,7 +43,7 @@ const ReservationCourse = ({ user }) => {
 
     // Appeler le backend pour récupérer les matières
     axios
-      .get("http://localhost:8082/api/auth/subjects")
+      .get("http://10.200.0.12:8082/api/auth/subjects")
       .then((response) => setAvailableSubjects(response.data))
       .catch((error) =>
         console.error("Erreur lors de la récupération des matières :", error)
@@ -57,7 +57,7 @@ const ReservationCourse = ({ user }) => {
       // Appeler le backend pour effectuer la réservation
       axios
         .post(
-          `http://localhost:8082/api/auth/courses/${user.id}/${availability.availabilityId}/create`,
+          `http://10.200.0.12:8082/api/auth/courses/${user.id}/${availability.availabilityId}/create`,
           {}
         )
         .then((response) => {

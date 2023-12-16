@@ -40,7 +40,7 @@ export default function TeacherSpace({ user }) {
   useEffect(() => {
     if (user.roles[0].name === "TEACHER") {
       axios
-        .get(`http://localhost:8082/api/auth/teachers/${user.id}`)
+        .get(`http://10.200.0.12:8082/api/auth/teachers/${user.id}`)
         .then((response) => {
           setAdditionalInfo(response.data.profession || ""); // Assurez-vous que vous initialisez additionalInfo
           setFormData({
@@ -59,7 +59,7 @@ export default function TeacherSpace({ user }) {
 
     if (user.roles[0].name === "TEACHER") {
         try {
-            const response = await axios.get(`http://localhost:8082/api/auth/teachers/${user.id}`);
+            const response = await axios.get(`http://10.200.0.12:8082/api/auth/teachers/${user.id}`);
             setFormData({
                 ...formData,
                 profession: response.data.profession || "",
@@ -86,7 +86,7 @@ export default function TeacherSpace({ user }) {
     e.preventDefault();
     try {
       // Handle the submit logic for a parent
-      await axios.put(`http://localhost:8082/api/auth/updatet/${user.id}`, formData, {
+      await axios.put(`http://10.200.0.12:8082/api/auth/updatet/${user.id}`, formData, {
         headers: {
           "Content-Type": "application/json",
         },

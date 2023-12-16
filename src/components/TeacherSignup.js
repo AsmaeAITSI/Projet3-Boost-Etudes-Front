@@ -28,7 +28,7 @@ export default function TeacherSignup() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await fetch("http://localhost:8082/api/auth/subjects");
+        const response = await fetch("http://10.200.0.12:8082/api/auth/subjects");
         if (response.ok) {
           const subjects = await response.json();
           setAvailableSubjects(subjects);
@@ -79,7 +79,7 @@ export default function TeacherSignup() {
     }
 
     try {
-      const response = await fetch("http://localhost:8082/api/auth/teacher/register", {
+      const response = await fetch("http://10.200.0.12:8082/api/auth/teacher/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

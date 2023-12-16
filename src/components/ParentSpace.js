@@ -39,7 +39,7 @@ export default function ParentSpace({ user }) {
   useEffect(() => {
     if (user.roles[0].name === "PARENT") {
       axios
-        .get(`http://localhost:8082/api/auth/parents/${user.id}`)
+        .get(`http://10.200.0.12:8082/api/auth/parents/${user.id}`)
         .then((response) => {
           setAdditionalInfo(response.data.profession || "");
         })
@@ -79,7 +79,7 @@ export default function ParentSpace({ user }) {
     e.preventDefault();
     try {
       // Handle the submit logic for a parent
-      await axios.put(`http://localhost:8082/api/auth/update/${user.id}`, formData, {
+      await axios.put(`http://10.200.0.12:8082/api/auth/update/${user.id}`, formData, {
         headers: {
           "Content-Type": "application/json",
         },

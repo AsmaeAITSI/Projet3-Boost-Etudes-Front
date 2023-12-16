@@ -45,7 +45,7 @@ export default function ParentSignup() {
     }
 
     try {
-      const response = await fetch("http://localhost:8082/api/auth/parent/register", {
+      const response = await fetch("http://10.200.0.12:8082/api/auth/parent/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
