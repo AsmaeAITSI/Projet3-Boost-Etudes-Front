@@ -10,6 +10,7 @@ import Signup from "./Signup";
 import Footer from './Footer';
 import Availability from './Availability';
 import ReservationCourse from "./ReservationCourse";
+import ParentCourses from "./ParentCourses";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,7 +40,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/mes-disponibilites" element={<Availability user={user} />} />
           <Route path="/reservation-course" element={<ReservationCourse user={user}/>} />
-          
+          <Route path="/my-courses" element={<ParentCourses user={user}/>} />
         </Routes>
       </Container>
       <Footer />

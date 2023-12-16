@@ -24,6 +24,7 @@ const ReservationCourse = ({ user }) => {
   const [selectedSubject, setSelectedSubject] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [reservedAvailability, setReservedAvailability] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     // Appeler le backend pour récupérer les disponibilités des professeurs
@@ -68,9 +69,12 @@ const ReservationCourse = ({ user }) => {
           // Filtrer les availabilities pour exclure celle qui vient d'être réservée
           setAvailabilities(availabilities.filter(avail => avail !== availability));
         })
-        .catch((error) =>
-          console.error("Erreur lors de la création du cours :", error)
-        );
+        .catch((error) => {
+          console.error("Erreur lors de la création du cours :", error);
+          
+          // Mettre à jour l'état de l'erreur pour afficher sur la page
+          setError("Désolé, une erreur s'est produite lors de la réservation du cours.");
+        });
     } else {
       console.error("L'utilisateur n'est pas correctement défini.");
     }
@@ -150,6 +154,11 @@ const ReservationCourse = ({ user }) => {
             ))}
           </TableBody>
         </Table>
+        {error && (
+          <Typography variant="body2" color="error" style={{ marginTop: "16px" }}>
+            {error}
+          </Typography>
+        )}
       </Box>
     </Container>
   );

@@ -105,8 +105,7 @@ export default function ParentSpace({ user }) {
   };
 
   const handleShowMyCoursesClick = () => {
-    // Ajoutez la logique pour rediriger vers la page d'affichage des cours
-    // Vous pouvez utiliser React Router pour gérer les routes dans votre application
+    navigate("/my-courses")
   };
 
   return (
